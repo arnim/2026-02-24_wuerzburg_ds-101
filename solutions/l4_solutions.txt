@@ -1,0 +1,42 @@
+Here are the filled-in solutions for the 3 empty exercise cells in part_4.ipynb (the Topic Models notebook).
+
+⸻
+
+Cell (Exercise) — CountVectorizer with constraints
+
+Insert this into the first empty code cell right after the “CountVectorizer …” exercise text.
+
+from sklearn.feature_extraction.text import CountVectorizer
+
+vectorizer = CountVectorizer(
+    stop_words="english",
+    min_df=5,          # at least 5 documents
+    max_df=0.30,       # at most 30% of documents
+    token_pattern=r"[a-zA-Z]{4,10}",  # letters only, length 4..10 (hint)
+    lowercase=True
+)
+
+X_bag_of_words = vectorizer.fit_transform(data)
+
+
+⸻
+
+Cell — Size of our vocabulary
+
+Insert this into the next empty code cell under “Size of our vocabulary”.
+
+len(vectorizer.vocabulary_)
+
+(Equivalent: X_bag_of_words.shape[1].)
+
+⸻
+
+Cell (Exercise) — LatentDirichletAllocation with 50 topics
+
+Insert this into the empty code cell under the LDA exercise prompt.
+
+from sklearn.decomposition import LatentDirichletAllocation
+
+lda = LatentDirichletAllocation(n_components=50, random_state=1)
+
+After that, the notebook’s existing line lda.fit(X_bag_of_words) will run, and then display_topics(...) will work as written.

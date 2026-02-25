@@ -1,0 +1,1 @@
+len(vectorizer.vocabulary_)

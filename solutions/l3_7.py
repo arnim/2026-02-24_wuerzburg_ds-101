@@ -1,0 +1,1 @@
+len(text_train)

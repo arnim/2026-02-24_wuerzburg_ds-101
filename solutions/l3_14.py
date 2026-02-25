@@ -1,0 +1,1 @@
+visualize_coefficients(clf, vectorizer.get_feature_names(), n_top_features=15)
